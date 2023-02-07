@@ -206,12 +206,13 @@ function makePasswordRequest(passwordParameters) {
     // Create the request options object
     const requestOptions = {
       method: 'POST',
+      mode: 'cors',
       headers: myHeaders,
       body: raw,
       redirect: 'follow',
     };
 
-    const URL = 'https://python-pwd-api.onrender.com';
+    const URL = 'https://python-pwd-api.onrender.com/password';
     // const URL = 'http://localhost:5000/password';
 
     // Use fetch to make HTTP POST request
