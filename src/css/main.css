@@ -1,0 +1,65 @@
+main {
+  margin-top: 30px;
+}
+
+form {
+  margin-top: 15px;
+}
+
+#settings-accordion {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.password-box {
+  margin: 25px 0;
+}
+.password-box .password-container {
+  padding: 5px;
+  border-radius: 10px;
+}
+.password-box .password-container .password-content {
+  padding: 5px;
+  border: 1px solid #333;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+  transition: all 0.25s ease-in-out;
+}
+.password-box .password-container .password-content:hover {
+  background-color: #333;
+}
+.password-box .password-container .password-content.copied {
+  background-color: #1f8a70;
+  border-color: #1f8a70;
+  color: white;
+}
+.password-box .password-container .password-content.poor {
+  border: 3px solid #7a0000;
+  border-radius: 5px;
+}
+.password-box .password-container .password-content.weak {
+  border: 3px solid #ff4242;
+  border-radius: 5px;
+}
+.password-box .password-container .password-content.ok {
+  border: 3px solid #fac748;
+  border-radius: 5px;
+}
+.password-box .password-container .password-content.good {
+  border: 3px solid #70c1b3;
+  border-radius: 5px;
+}
+.password-box .password-container .password-content.strong {
+  border: 3px solid #6bf178;
+  border-radius: 5px;
+}
+.password-box .password-container .password-strength {
+  display: flex;
+  justify-content: end;
+  font-size: 0.7em;
+}/*# sourceMappingURL=main.css.map */

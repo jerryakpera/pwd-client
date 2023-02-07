@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Setting favicon to PG favicon in images folder -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Importing the latest version of bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Importing css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/loading.css" />
+    <link rel="stylesheet" href="./css/snackbar.css" />
+
+    <title>PGCrypt | Password Generator</title>
+  </head>
+
+  <body class="d-flex h-100 text-bg-dark">
+    <!-- Container div to limit the width on big devices -->
+    <div class="container">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <!-- Heading code with title of site -->
+        <header class="mb-auto">
+          <div>
+            <h4 class="font-weight-bold float-md-start mb-0">PGCrypt</h4>
+          </div>
+        </header>
+
+        <main>
+          <!-- Call to action -->
+          <h1 class="fw-bold text-primary">
+            Generate personalized and random passwords!
+          </h1>
+          <p class="lead">
+            PGCrypt uses information you provide to generate strong passwords.
+            To create more memorable passwords answer the following questions.
+          </p>
+          <hr />
+
+          <!-- Form to get users information & Password settings-->
+          <form id="main-form">
+            <!-- Passwords are generated on enter press -->
+            <div class="row" style="margin-bottom: 0; padding: 0">
+              <!-- Where did your parents meet? -->
+              <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="my-3">
+                  <label for="info-1" class="form-label">
+                    Where did your parents meet?
+                    <br />
+                    <small style="color: #ccc; font-size: 0.7em; margin-top: 0">
+                      2 words
+                    </small>
+                  </label>
+                  <input
+                    id="info-1"
+                    type="tedt"
+                    class="form-control"
+                    placeholder="Oslo, Norway"
+                  />
+                </div>
+              </div>
+
+              <!-- What is your favorite football team? -->
+              <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="my-3">
+                  <label for="info-2" class="form-label">
+                    What is your favourite football team?
+                    <br />
+                    <small style="color: #ccc; font-size: 0.7em; margin-top: 0">
+                      2 words
+                    </small>
+                  </label>
+                  <input
+                    id="info-2"
+                    type="tedt"
+                    class="form-control"
+                    placeholder="Man utd"
+                  />
+                </div>
+              </div>
+
+              <!-- What is the name of your first pet? -->
+              <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="my-3">
+                  <label for="info-3" class="form-label">
+                    What is the name of your first pet?
+                    <br />
+                    <small style="color: #ccc; font-size: 0.7em; margin-top: 0">
+                      2 words
+                    </small>
+                  </label>
+                  <input
+                    id="info-3"
+                    type="tedt"
+                    class="form-control"
+                    placeholder="Chief"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion to modify password generation options -->
+            <div class="accordion" id="settings-accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <!-- Button to show/hide accordion -->
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Modify password options
+                  </button>
+                </h2>
+
+                <div
+                  id="collapseOne"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#settings-accordion"
+                  class="accordion-collapse collapse hide"
+                >
+                  <div class="accordion-body">
+                    <div class="row">
+                      <!-- Toggle uppercase -->
+                      <div class="col-xs-12 col-sm-6 col-md-3 mt-2">
+                        <div class="option-box border rounded px-2 py-4">
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              id="uppercase"
+                              checked
+                            />
+                            <label class="form-check-label" for="uppercase">
+                              Uppercase (A-Z)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Toggle lowercase -->
+                      <div class="col-xs-12 col-sm-6 col-md-3 mt-2">
+                        <div class="option-box border rounded px-2 py-4">
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              id="lowercase"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-auto"
+                              for="lowercase"
+                            >
+                              Lowercase (a-z)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Toggle numbers -->
+                      <div class="col-xs-12 col-sm-6 col-md-3 mt-2">
+                        <div class="option-box border rounded px-2 py-4">
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              id="numbers"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-auto"
+                              for="numbers"
+                            >
+                              Numbers (0-9)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Toggle symbols -->
+                      <div class="col-xs-12 col-sm-6 col-md-3 mt-2">
+                        <div class="option-box border rounded px-2 py-4">
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                              id="symbols"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-auto"
+                              for="symbols"
+                            >
+                              Symbols
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Container that holds the password and the regenerate and copy button -->
+            <div class="password-box">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <!-- Password 1 -->
+                  <div class="password-container">
+                    <div class="password-content password-content--one">
+                      <span id="password-content-1"> First password </span>
+                    </div>
+                    <!-- Strength indicator -->
+                    <div
+                      class="password-strength"
+                      id="password-strength-1"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                  <!-- Password 2 -->
+                  <div class="password-container">
+                    <div class="password-content password-content--two">
+                      <span id="password-content-2"> Second password </span>
+                    </div>
+
+                    <!-- Strength indicator -->
+                    <div
+                      class="password-strength"
+                      id="password-strength-2"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                  <!-- Password 3 -->
+                  <div class="password-container">
+                    <div class="password-content password-content--three">
+                      <span id="password-content-3"> Third password </span>
+                    </div>
+
+                    <!-- Strength indicator -->
+                    <div
+                      class="password-strength"
+                      id="password-strength-3"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <small style="color: #ccc; font-size: 0.7em">Click to copy</small>
+            </div>
+
+            <!-- Generate password button -->
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg submit-button"
+              id="submit"
+            >
+              Generate Password
+            </button>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <!-- Notification snackbar -->
+    <div id="snackbar">Something went wrong. Refresh and try again</div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay">
+      <span class="fas fa-spinner fa-3x fa-spin"></span>
+    </div>
+
+    <!-- Ionicon icons & JS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- zxcvbn is a password strength estimator inspired by password crackers -->
+    <script src="./js/zxcvbn.js"></script>
+
+    <!-- Importing main JS file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
