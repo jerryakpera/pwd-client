@@ -161,7 +161,6 @@ function getPasswordStrength(password) {
 
 // Function to display the passwords in the password boxes
 function displayPasswords(passwords) {
-  console.log(passwords);
   // Loop through the password boxes and for each password content box
   passwordContentBoxes.forEach((passwordBox, i) => {
     // Get the password from the passwords argument, eg, passwords.password1
