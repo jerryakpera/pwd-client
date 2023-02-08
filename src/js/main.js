@@ -212,7 +212,7 @@ function makePasswordRequest(passwordParameters) {
       redirect: 'follow',
     };
 
-    const URL = 'https://python-pwd-api.onrender.com/password';
+    const URL = 'https://rural-bedroom-production.up.railway.app/password';
     // const URL = 'http://localhost:5000/password';
 
     // Use fetch to make HTTP POST request
