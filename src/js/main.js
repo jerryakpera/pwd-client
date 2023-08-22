@@ -211,7 +211,8 @@ function makePasswordRequest(passwordParameters) {
       redirect: 'follow',
     };
 
-    const URL = 'https://rural-bedroom-production.up.railway.app/password';
+    const URL = 'https://jeremiahakpera.work:5000/password';
+    // const URL = 'https://rural-bedroom-production.up.railway.app/password';
     // const URL = 'http://localhost:5000/password';
 
     // Use fetch to make HTTP POST request
